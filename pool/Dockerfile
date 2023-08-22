@@ -7,9 +7,9 @@ COPY . .
 # 设置软件源
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 # 设置时区
-RUN apk --no-cache add tzdata  && \
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo "Asia/Shanghai" > /etc/timezone \
+RUN apk --no-cache add tzdata && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone
 # 安装pip源
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     python -m pip install --upgrade pip && \

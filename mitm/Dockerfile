@@ -21,9 +21,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 RUN apk --no-cache add tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone
-#RUN apk --no-cache add tzdata  && \
-#    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-#    echo "Asia/Shanghai" > /etc/timezone \
 
 COPY --from=builder /app/main ./
 RUN ls -al

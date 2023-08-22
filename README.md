@@ -22,10 +22,22 @@
 
 国内源加速下载项目
 ```bash
-git clone https://gitclone.com/github.com/ethanwang9/covid19.git
+# 国内
+git clone https://gitclone.com/github.com/ethanwang9/ProxyPool.git
+```
+
+```bash
+# 香港
+git clone https://hub.fgit.cf/ethanwang9/ProxyPool.git
+```
+
+```bash
+# 网络节点
+git clone https://github.moeyy.xyz/https://github.com/ethanwang9/ProxyPool.git
 ```
 
 启动服务
+
 ```bash
 # 使用docker-compose 后台启动
 docker-compose -f deploy/docker-compose.yaml up -d
