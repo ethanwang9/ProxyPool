@@ -8,6 +8,4 @@ const (
 
 const (
 	ServerPort = "23456"
-	// GetProxyAPI TODO 修改代理服务器接口地址
-	GetProxyAPI = "http://127.0.0.1:23457/get?t="
 )

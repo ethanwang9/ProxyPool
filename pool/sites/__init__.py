@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from .proxy1 import Proxy1
 from .proxy2 import Proxy2
 

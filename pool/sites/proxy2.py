@@ -2,12 +2,10 @@
 # author: Ethan.Wang
 # desc: https://zj.v.api.aa1.cn/api/proxyip/
 import re
-from datetime import datetime, timedelta
-
 import requests
-from fake_useragent import UserAgent
-
 import export
+from datetime import datetime, timedelta
+from fake_useragent import UserAgent
 
 
 class Proxy2:
@@ -31,13 +29,13 @@ class Proxy2:
             return []
 
     def run(self):
-        # 校验时间 6h
+        # 校验时间 4h
         t = self.db.get_proxy_get_time()
         t2 = t.get(self.name)
         if t2 is not None:
             tItemObj = datetime.strptime(
                 datetime.fromtimestamp(t[self.name]).strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S'
-            ) + timedelta(hours=6)
+            ) + timedelta(hours=4)
             if datetime.now() <= tItemObj:
                 return
 

@@ -1,8 +1,8 @@
 # python
 venv/
-**/__pycache__
+pool/**/__pycache__
 
 # other
-.idea/
+pool/.idea/
 mitm/.idea/
 

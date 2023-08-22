@@ -75,7 +75,7 @@ if __name__ == '__main__':
     show()
 
     # 初始化 redis
-    rdb = RedisCon()
+    rdb = RedisCon(pwd=export.RedisPwd, host=export.RedisHost, port=export.RedisPort)
 
     # 初始化数据库内容
     initRedis(rdb)

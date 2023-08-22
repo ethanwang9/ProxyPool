@@ -2,12 +2,10 @@
 # author: Ethan.Wang
 
 import ipaddress
-from concurrent.futures import ThreadPoolExecutor
-
 import requests
 import urllib3
-
 import export
+from concurrent.futures import ThreadPoolExecutor
 
 
 class Check:
@@ -86,7 +84,7 @@ class Check:
             return True
 
     # 多线程代理校验
-    def threadCheckProxy(self, ip_list, work):
+    def threadCheckProxy(self, ip_list):
         thread_list = []
         success_list = []
 
@@ -94,7 +92,7 @@ class Check:
         ip_list = list(set(ip_list))
 
         # 多线程验证代理
-        pool = ThreadPoolExecutor(max_workers=work)
+        pool = ThreadPoolExecutor(max_workers=export.Check_Max)
         for v in ip_list:
             t = pool.submit(self.checkProxy, v)
             thread_list.append(t)
@@ -120,7 +118,7 @@ class Check:
         s = self.db.getAll_proxy_success()
 
         # 运行多线程校验任务
-        sc = self.threadCheckProxy(s, 500)
+        sc = self.threadCheckProxy(s)
 
         # 清空 proxy_success
         self.db.drop_proxy_success()
@@ -146,7 +144,7 @@ class Check:
             dl.append(v.get("ip"))
 
         # 运行多线程校验任务
-        c = self.threadCheckProxy(dl, 1000)
+        c = self.threadCheckProxy(dl)
 
         # 设置成功的IP, 并添加到 proxy_success
         for v in c:
