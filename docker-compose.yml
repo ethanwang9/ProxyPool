@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   # 代理
@@ -14,10 +14,9 @@ services:
     depends_on:
       - pool
     environment:
-      - PROXY_ADDR=192.168.0.11:23457
+      - PROXY_PORT=23457
     networks:
-      network:
-        ipv4_address: 192.168.0.10
+      - network
 
   # 爬虫
   pool:
@@ -32,12 +31,12 @@ services:
     depends_on:
       - redis
     environment:
+      - RUN_PORT=23457
+      - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - REDIS_HOST=192.168.0.12
       - REDIS_PASSWORD=GnnIHXynF4Dqft2s
     networks:
-      network:
-        ipv4_address: 192.168.0.11
+      - network
 
   # 数据库 Redis
   redis:
@@ -50,8 +49,7 @@ services:
       - redis_data:/data
     command: --requirepass "GnnIHXynF4Dqft2s"
     networks:
-      network:
-        ipv4_address: 192.168.0.12
+      - network
 
 #挂在容器卷
 volumes:
@@ -60,7 +58,4 @@ volumes:
 # 网络
 networks:
   network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: '192.168.0.1/24'
+    

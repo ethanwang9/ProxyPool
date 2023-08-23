@@ -2,11 +2,13 @@
 # author: Ethan.Wang
 # desc: https://ip.ihuan.me/
 import re
-import export
-import requests
 from datetime import datetime, timedelta
+
+import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
+
+import export
 
 
 class Proxy1:

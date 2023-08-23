@@ -2,10 +2,12 @@
 # author: Ethan.Wang
 # desc: https://zj.v.api.aa1.cn/api/proxyip/
 import re
-import requests
-import export
 from datetime import datetime, timedelta
+
+import requests
 from fake_useragent import UserAgent
+
+import export
 
 
 class Proxy2:

@@ -1,13 +1,15 @@
 # name: 连接 redis 服务
 # author: Ethan.Wang
 import json
-import redis
-import export
 from datetime import datetime
+
+import redis
+
+import export
 
 
 class RedisCon:
-    def __init__(self, pwd, host="localhost", port=6379, db=0):
+    def __init__(self, pwd, host="127.0.0.1", port=6379, db=0):
         self.DB = redis.Redis(host=host, port=port, db=db, password=pwd)
         self.Proxy_Success = "proxy_success"
         self.Proxy_List = "proxy_list"

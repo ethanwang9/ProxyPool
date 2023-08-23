@@ -22,27 +22,20 @@
 
 国内源加速下载项目
 ```bash
-# 国内
-git clone https://gitclone.com/github.com/ethanwang9/ProxyPool.git
-```
-
-```bash
 # 香港
 git clone https://hub.fgit.cf/ethanwang9/ProxyPool.git
 ```
 
 ```bash
-# 网络节点
+# 网络节点, 支持下载 GITHUB Release、repo、raw 等文件...
 git clone https://github.moeyy.xyz/https://github.com/ethanwang9/ProxyPool.git
 ```
 
 启动服务
 
 ```bash
-# 使用docker-compose 后台启动
-docker-compose -f deploy/docker-compose.yaml up -d
-# 服务都启动成功后,使用此命令行可清除none镜像
-docker system prune
+# 使用 docker-compose 后台启动服务
+docker-compose up -d --build
 ```
 
 ## 使用
@@ -83,4 +76,4 @@ Golang 负责 HTTP 透明代理和代理转发服务
   - TODO
     - [ ] HTTP 透明代理添加账号密码认证模式
     - [ ] Python 代理站点增加 3 个
-  - 更新时间: 2023-08-22 15:45:09
+  - 更新时间: 2023-08-24 01:29:48

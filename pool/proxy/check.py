@@ -2,10 +2,12 @@
 # author: Ethan.Wang
 
 import ipaddress
+from concurrent.futures import ThreadPoolExecutor
+
 import requests
 import urllib3
+
 import export
-from concurrent.futures import ThreadPoolExecutor
 
 
 class Check:

@@ -10,7 +10,7 @@ import (
 
 // GetProxyUrl 获取代理服务器
 func GetProxyUrl(scheme string) string {
-	u := fmt.Sprintf("http://%s/get?t=%s", os.Getenv("PROXY_ADDR"), scheme)
+	u := fmt.Sprintf("http://pool:%s/get?t=%s", os.Getenv("PROXY_PORT"), scheme)
 	resp, err := http.Get(u)
 	if err != nil {
 		log.Println("获取随机代理服务器失败, Error: " + err.Error())

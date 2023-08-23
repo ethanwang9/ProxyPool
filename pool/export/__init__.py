@@ -1,5 +1,6 @@
 # name: 变量
 # author: Ethan.Wang
+import logging
 import os
 
 # ==========
@@ -11,7 +12,8 @@ APPVersion = "1.0.0"
 AppUrl = "github.com/ethanwang9/ProxyPool"
 
 # 软件信息
-ServerPort = 23457
+# ServerPort = 23457
+ServerPort = os.environ.get('RUN_PORT')
 Check_Max = 1000
 
 # redis 程序信息
@@ -23,5 +25,5 @@ RedisErrorValue = 0
 # RedisHost = "localhost"
 # RedisPwd = "123456"
 RedisHost = os.environ.get('REDIS_HOST')
-RedisPwd = os.environ.get('REDIS_PASSWORD')
 RedisPort = os.environ.get('REDIS_PORT')
+RedisPwd = os.environ.get('REDIS_PASSWORD')

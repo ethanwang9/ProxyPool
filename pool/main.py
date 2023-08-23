@@ -1,5 +1,6 @@
 # name: 程序入口
 # author: Ethan.Wang
+import logging
 from datetime import datetime, timedelta
 
 import export
@@ -75,11 +76,11 @@ if __name__ == '__main__':
     show()
 
     # 初始化 redis
-    rdb = RedisCon(pwd=export.RedisPwd, host=export.RedisHost, port=export.RedisPort)
+    rdb = RedisCon(host=export.RedisHost, port=export.RedisPort, pwd=export.RedisPwd)
 
     # 初始化数据库内容
     initRedis(rdb)
 
     # API接口
-    print("ProxyPool-Pool 运行端口号: %d" % export.ServerPort)
-    FlaskService(rdb, port=export.ServerPort).run()
+    print("ProxyPool-Pool 运行端口号: %s" % export.ServerPort)
+    FlaskService(rdb, port=int(export.ServerPort)).run()

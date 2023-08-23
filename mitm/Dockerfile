@@ -1,4 +1,3 @@
-# 编译GO
 FROM golang:1.21-alpine as builder
 
 WORKDIR /app
@@ -22,10 +21,14 @@ RUN apk --no-cache add tzdata && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone
 
+# 复制编译文件
 COPY --from=builder /app/main ./
-RUN ls -al
-ENV PROXY_ADDR = "127.0.0.1:23457"
 
+# 环境
+ENV PROXY_PORT=23457
+
+# 暴露端口
 EXPOSE 23456
 
+# 入口
 ENTRYPOINT ./main

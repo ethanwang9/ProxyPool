@@ -1,15 +1,18 @@
 # name: API接口任务
 # author: Ethan.Wang
 import random
-import sites
+
 from flask import Flask, request
 from flask_apscheduler import APScheduler
 from gevent import pywsgi
+
+import export
+import sites
 from proxy.check import Check
 
 
 class FlaskService:
-    def __init__(self, rdb, port=23457, host="127.0.0.1"):
+    def __init__(self, rdb, port=23457, host="0.0.0.0"):
         # 数据库服务
         self.db = rdb
 
