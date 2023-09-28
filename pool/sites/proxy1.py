@@ -34,8 +34,6 @@ class Proxy1:
         if result.status_code == 200:
             cookie = result.cookies.get("statistics")
             self.cookie_statistics = cookie
-        else:
-            print("采集代理IP任务 %s, 采集站点生效" % self.name)
 
     def getKey(self):
         headers = {
@@ -51,8 +49,6 @@ class Proxy1:
             matches = re.findall(pattern, result.text)
             if matches[0]:
                 self.key = matches[0]
-        else:
-            print("采集代理IP任务 %s, 采集站点生效" % self.name)
 
     def getIP(self):
         headers = {
@@ -87,7 +83,7 @@ class Proxy1:
             except AttributeError:
                 ip_list = []
         else:
-            print("采集代理IP任务 %s, 采集站点生效" % self.name)
+            print("采集代理IP任务 %s, 采集站点失效" % self.name)
 
         return ip_list
 

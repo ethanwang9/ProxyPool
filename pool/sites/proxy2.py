@@ -28,7 +28,7 @@ class Proxy2:
                 listData = re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+', content)
                 return listData
             else:
-                print("采集代理IP任务 %s, 采集站点生效" % self.name)
+                print("采集代理IP任务 %s, 采集站点失效" % self.name)
                 return []
         except requests.exceptions.RequestException as e:
             print("采集代理IP任务 %s, 获取采集页面信息失败. Error: %s" % (self.name, str(e)))
