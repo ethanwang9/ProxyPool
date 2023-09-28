@@ -1,8 +1,13 @@
-# python
-venv/
+# pool
+pool/venv/
 pool/**/__pycache__
+
+# doc
+doc/
 
 # other
 pool/.idea/
+pool/.vscode/
 mitm/.idea/
+mitm/.vscode/
 .vscode/

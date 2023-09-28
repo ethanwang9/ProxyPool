@@ -23,6 +23,7 @@ RedisErrorValue = 0
 
 # redis 认证信息
 # RedisHost = "localhost"
+# RedisPort = 6379
 # RedisPwd = "123456"
 RedisHost = os.environ.get('REDIS_HOST')
 RedisPort = os.environ.get('REDIS_PORT')

@@ -30,8 +30,12 @@ class Proxy1:
             "User-Agent": self.ua,
         }
         result = requests.get(url=self.url_cookie, headers=headers)
-        cookie = result.cookies.get("statistics")
-        self.cookie_statistics = cookie
+        # 判断是否正常返回数据
+        if result.status_code == 200:
+            cookie = result.cookies.get("statistics")
+            self.cookie_statistics = cookie
+        else:
+            print("采集代理IP任务 %s, 采集站点生效" % self.name)
 
     def getKey(self):
         headers = {
@@ -40,11 +44,15 @@ class Proxy1:
             "User-Agent": self.ua,
         }
         result = requests.get(url=self.url_key, headers=headers)
-        # 提取key
-        pattern = r'.val\("(.+)"\);'
-        matches = re.findall(pattern, result.text)
-        if matches[0]:
-            self.key = matches[0]
+        # 判断是否正常返回数据
+        if result.status_code == 200:
+            # 提取key
+            pattern = r'.val\("(.+)"\);'
+            matches = re.findall(pattern, result.text)
+            if matches[0]:
+                self.key = matches[0]
+        else:
+            print("采集代理IP任务 %s, 采集站点生效" % self.name)
 
     def getIP(self):
         headers = {
@@ -69,12 +77,17 @@ class Proxy1:
         result = requests.post(url=self.url_ip, headers=headers, data=data)
         # with open('t.html', 'w', encoding='utf-8') as file:
         #     file.write(result.text)
-        # 提取ip
-        soup = BeautifulSoup(result.text, 'html.parser')
-        try:
-            ip_list = [item.strip() for item in soup.find('div', class_='panel-body').stripped_strings]
-        except AttributeError:
-            ip_list = []
+        # 判断是否返回数据
+        ip_list = []
+        if result.status_code == 200:
+            # 提取ip
+            soup = BeautifulSoup(result.text, 'html.parser')
+            try:
+                ip_list = [item.strip() for item in soup.find('div', class_='panel-body').stripped_strings]
+            except AttributeError:
+                ip_list = []
+        else:
+            print("采集代理IP任务 %s, 采集站点生效" % self.name)
 
         return ip_list
 

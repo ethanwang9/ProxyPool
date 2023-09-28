@@ -1,11 +1,9 @@
 # name: 连接 redis 服务
 # author: Ethan.Wang
 import json
-from datetime import datetime
-
 import redis
-
 import export
+from datetime import datetime
 
 
 class RedisCon:

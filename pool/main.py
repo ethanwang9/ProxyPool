@@ -84,3 +84,6 @@ if __name__ == '__main__':
     # API接口
     print("ProxyPool-Pool 运行端口号: %s" % export.ServerPort)
     FlaskService(rdb, port=int(export.ServerPort)).run()
+
+    # 测试
+    # sites.run(rdb)

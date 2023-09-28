@@ -46,10 +46,11 @@ docker-compose up -d --build
 
 ## 代理站点
 
-| 站点       | 状态 | 代码     |
-|----------|----|--------|
-| 小幻HTTP代理 | ✔  | proxy1 |
-| 夏柔HTTP代理 | ✔  | proxy2 |
+| 站点          | 状态 | 代码   |
+| ------------- | ---- | ------ |
+| 小幻HTTP代理  | ×    | proxy1 |
+| 夏柔HTTP代理  | √    | proxy2 |
+| OpenProxyList | √    | proxy3 |
 
 ## 工作原理
 

@@ -1,6 +1,8 @@
-# name: 采集站点2
+# name: 采集站点3
 # author: Ethan.Wang
-# desc: https://zj.v.api.aa1.cn/api/proxyip/
+# desc:
+#   https://openproxylist.xyz/
+#   https://openproxylist.xyz/all.txt -> 获取全部代理
 import re
 from datetime import datetime, timedelta
 
@@ -10,10 +12,10 @@ from fake_useragent import UserAgent
 import export
 
 
-class Proxy2:
+class Proxy3:
     def __init__(self, rdb):
-        self.name = "proxy2"
-        self.url = "https://zj.v.api.aa1.cn/api/proxyip/"
+        self.name = "proxy3"
+        self.url = "https://openproxylist.xyz/all.txt"
         self.ua = UserAgent().random
         self.db = rdb
 
@@ -22,11 +24,8 @@ class Proxy2:
             result = requests.get(url=self.url, headers={"User-Agent": self.ua})
             if result.status_code == 200:
                 content = result.content.decode("utf8")
-                # with open('t.html', 'r', encoding="utf8") as file:
-                # file.write(content)
-                # content = file.read()
-                listData = re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+', content)
-                return listData
+                l = re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+', content)
+                return l
             else:
                 print("采集代理IP任务 %s, 采集站点生效" % self.name)
                 return []
@@ -41,7 +40,7 @@ class Proxy2:
         if t2 is not None:
             tItemObj = datetime.strptime(
                 datetime.fromtimestamp(t[self.name]).strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S'
-            ) + timedelta(hours=4)
+            ) + timedelta(hours=2)
             if datetime.now() <= tItemObj:
                 return
 
