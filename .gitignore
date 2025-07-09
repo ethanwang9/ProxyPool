@@ -1,13 +1,8 @@
-# pool
-pool/venv/
-pool/**/__pycache__
-
-# doc
-doc/
-
-# other
-pool/.idea/
-pool/.vscode/
-mitm/.idea/
-mitm/.vscode/
+# IDE配置文件
 .vscode/
+.idea/
+__pycache__/
+
+# 环境
+.venv/
+uv.lock
