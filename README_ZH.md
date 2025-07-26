@@ -20,13 +20,15 @@
 
 更多语言文档: [English](README.md)、[中文文档](README_ZH.md)
 
+更多历史版本: v1.0.0 [Github 地址](https://github.com/ethanwang9/ProxyPool/releases/tag/1.0.0) [Gitee 地址](https://gitee.com/EthanWang9/ProxyPool/tree/1.0.0)
+
 ## 部署
 
-部署方式待更新
+施工中
 
 ## 使用
 
-使用方式待更新
+施工中
 
 ## 更新日志
 - v1.1.0

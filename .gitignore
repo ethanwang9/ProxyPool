@@ -1,8 +1,0 @@
-# IDE配置文件
-.vscode/
-.idea/
-__pycache__/
-
-# 环境
-.venv/
-uv.lock

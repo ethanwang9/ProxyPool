@@ -19,13 +19,15 @@ Users can dynamically forward request content by connecting to tunnel proxies, w
 
 More language document: [English](README.md)、[中文文档](README_ZH.md)
 
+More history version: v1.0.0 [Github link](https://github.com/ethanwang9/ProxyPool/releases/tag/1.0.0) [Gitee link](https://gitee.com/EthanWang9/ProxyPool/tree/1.0.0)
+
 ## Deployment
 
-Deployment method to be updated
+TODO
 
 ## Usage
 
-Usage method to be updated
+TODO
 
 ## Changelog
 - v1.1.0
