@@ -6,7 +6,7 @@
 
 ![Version](https://img.shields.io/badge/Version-1.1.0-blue)
 ![GitHub](https://img.shields.io/github/license/ethanwang9/ProxyPool)
-![Update Time](https://img.shields.io/badge/UpdateTime-2025/07/08-green)
+![Update Time](https://img.shields.io/github/last-commit/ethanwang9/ProxyPool)
 
 
 ```text
