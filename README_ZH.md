@@ -4,7 +4,7 @@
 
 用户通过连接隧道代理动态转发请求内容，在隧道内每一个请求通过一个随机 IP 进行转发。 通过隧道代理技术，实现流量智能分流、自动切换、自动优选, 简言之 **每次代理请求都会自动切换新代理**。
 
-![Version](https://img.shields.io/badge/Version-1.1.0-blue)
+![Version](https://img.shields.io/badge/Version-2.0.0-blue)
 ![GitHub](https://img.shields.io/github/license/ethanwang9/ProxyPool)
 ![Update Time](https://img.shields.io/github/last-commit/ethanwang9/ProxyPool)
 
@@ -31,10 +31,10 @@
 施工中
 
 ## 更新日志
-- v1.1.0
+- v2.0.0
   - 特征
     - TODO...
-  - 更新时间：2025-07-08
+  - 更新时间：2025-07-26
 - v 1.0.0
   - 特性
     - HTTP 透明代理服务端, 自动代理转发请求内容, 自适应 HTTP/HTTPS 类型代理

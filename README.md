@@ -4,7 +4,7 @@ This project primarily uses web crawling and tunnel proxy technology to automati
 
 Users can dynamically forward request content by connecting to tunnel proxies, where each request within the tunnel is forwarded through a random IP. Through tunnel proxy technology, intelligent traffic distribution, automatic switching, and automatic optimization are achieved. In simple terms, **each proxy request will automatically switch to a new proxy**.
 
-![Version](https://img.shields.io/badge/Version-1.1.0-blue)
+![Version](https://img.shields.io/badge/Version-2.0.0-blue)
 ![GitHub](https://img.shields.io/github/license/ethanwang9/ProxyPool)
 ![Update Time](https://img.shields.io/github/last-commit/ethanwang9/ProxyPool)
 
@@ -30,10 +30,10 @@ TODO
 TODO
 
 ## Changelog
-- v1.1.0
+- v2.0.0
   - Features
     - TODO...
-  - Update time: 2025-07-08
+  - Update time: 2025-07-26
 - v 1.0.0
   - Features
     - HTTP transparent proxy server, automatically forwards proxy request content, adaptive HTTP/HTTPS proxy types
